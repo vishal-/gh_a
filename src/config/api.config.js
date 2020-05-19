@@ -5,4 +5,5 @@ const host =
 
 export const API = {
   OFFERING: `${host}/offering`,
+  SERVICE: `${host}/service`
 };

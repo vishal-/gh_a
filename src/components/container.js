@@ -1,10 +1,24 @@
 import React from "react";
+import {
+  Route,
+  BrowserRouter as Router,
+  Switch,
+  Redirect
+} from "react-router-dom";
+import Offering from "./pages/offering";
 
 const Container = () => {
   return (
-    <div>
-      This works<div>TEST</div>
-    </div>
+    <Router>
+      <Switch>
+        <Route path="/offering">
+          <Offering />
+        </Route>
+        <Route path="/">
+          <Redirect to="/offering" />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
