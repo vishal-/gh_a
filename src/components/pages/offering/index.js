@@ -1,7 +1,8 @@
 import React from "react";
-import FormField from "../../atomic/form_fields";
 import { OFFERING_FIELDS as fields } from "../../../config/fields.config";
 import OfferingService from "../../../services/offering.service";
+import AddForm from "../../common/add_form";
+import Header from "../../common/header";
 
 class Offering extends React.Component {
   constructor() {
@@ -15,7 +16,7 @@ class Offering extends React.Component {
     this.setState({ [f]: v });
   };
 
-  reset = () => {
+  resetHandler = () => {
     this.setState({ ...this.initialValues });
   };
 
@@ -25,33 +26,18 @@ class Offering extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Offering</h2>
+      <>
+        <Header />
         <article>
-          <div className="bottom-stick row">
-            <div className="col-10">
-              <FormField
-                fields={fields}
-                changeHandler={this.changeHandler}
-                values={this.state}
-              />
-            </div>
-
-            <div className="col-2">
-              <div className="row-cols-1 mt-4">
-                <button className="primary" onClick={this.reset}>
-                  Reset
-                </button>
-              </div>
-              <div className="row-cols-1 mt-4">
-                <button className="primary" onClick={this.submitHandler}>
-                  Save
-                </button>
-              </div>
-            </div>
-          </div>
+          <AddForm
+            fields={fields}
+            values={this.state}
+            changeHandler={this.changeHandler}
+            resetHandler={this.resetHandler}
+            submitHandler={this.submitHandler}
+          />
         </article>
-      </div>
+      </>
     );
   }
 }
