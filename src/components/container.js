@@ -6,18 +6,21 @@ import {
   Redirect
 } from "react-router-dom";
 import Offering from "./pages/offering";
+import "../static/styles/container.scss";
 
 const Container = () => {
   return (
     <Router>
-      <Switch>
-        <Route path="/offering">
-          <Offering />
-        </Route>
-        <Route path="/">
-          <Redirect to="/offering" />
-        </Route>
-      </Switch>
+      <div className="container-fluid">
+        <Switch>
+          <Route path="/offering">
+            <Offering />
+          </Route>
+          <Route path="/">
+            <Redirect to="/offering" />
+          </Route>
+        </Switch>
+      </div>
     </Router>
   );
 };

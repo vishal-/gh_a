@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as serviceWorker from "./serviceWorker";
 import Container from "./components/container";
+import "./static/styles/bootstrap-grid.min.css";
+import "./static/styles/styles.scss";
 
 ReactDOM.render(
   <React.StrictMode>

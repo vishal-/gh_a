@@ -21,11 +21,24 @@ class Offering extends React.Component {
       <div>
         <h2>Offering</h2>
         <article>
-          <FormField
-            fields={fields}
-            changeHandler={this.changeHandler}
-            values={this.state}
-          />
+          <div className="bottom-stick">
+            <div className="w-80">
+              <FormField
+                fields={fields}
+                changeHandler={this.changeHandler}
+                values={this.state}
+              />
+            </div>
+
+            <div className="form-field-wrapper w-20">
+              <div className="">
+                <button>Reset</button>
+              </div>
+              <div className="">
+                <button>Save</button>
+              </div>
+            </div>
+          </div>
         </article>
       </div>
     );
