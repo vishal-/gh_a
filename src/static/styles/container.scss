@@ -1,0 +1,49 @@
+$input-border: #566573;
+$input-bg: #17202a;
+$input-focus-bg: #808b96;
+$input-color: #d5d8dc;
+$input-font-size: 0.9rem;
+
+button {
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+
+  &.primary {
+    width: 100%;
+    padding: 0.25rem 0;
+    border: 1px solid #2e86c1;
+    background-color: #1b4f72;
+    color: #ebf5fb;
+
+    &:hover {
+      background-color: #2874a6;
+    }
+  }
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.35rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: $input-font-size;
+  border: 1px solid $input-border;
+  background-color: $input-bg;
+  color: $input-color;
+
+  &:focus {
+    border: 2px solid $input-focus-bg;
+  }
+}
+
+textarea {
+  resize: none;
+  height: 5rem;
+}
+
+label {
+  font-size: 0.8rem;
+  display: block;
+  padding: 0.25rem;
+}

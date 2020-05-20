@@ -1,18 +1,27 @@
+export const TYPES = {
+  STR: "string",
+  TXT: "text"
+};
+
 export const OFFERING_FIELDS = [
   {
     label: "name",
-    type: "string"
+    type: TYPES.STR,
+    colsize: 12
   },
   {
     label: "title",
-    type: "string"
+    type: TYPES.STR,
+    colsize: 6
   },
   {
     label: "subtext",
-    type: "string"
+    type: TYPES.STR,
+    colsize: 6
   },
   {
     label: "description",
-    type: "text"
+    type: TYPES.TXT,
+    colsize: 12
   }
 ];

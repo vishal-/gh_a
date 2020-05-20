@@ -3,21 +3,29 @@ import InputString from "./input_string";
 import InputText from "./input_text";
 
 const FormField = ({ fields, changeHandler, values }) => {
-  return fields.map(field => (
-    <Fragment key={field.label}>
-      {field.type === "string" && (
-        <InputString
-          field={field}
-          changeHandler={changeHandler}
-          value={values[field.label]}
-        />
-      )}
+  return (
+    <div className="row">
+      {fields.map(field => (
+        <Fragment key={field.label}>
+          {field.type === "string" && (
+            <InputString
+              field={field}
+              changeHandler={changeHandler}
+              value={values[field.label]}
+            />
+          )}
 
-      {field.type === "text" && (
-        <InputText field={field} changeHandler={changeHandler} />
-      )}
-    </Fragment>
-  ));
+          {field.type === "text" && (
+            <InputText
+              field={field}
+              changeHandler={changeHandler}
+              value={values[field.label]}
+            />
+          )}
+        </Fragment>
+      ))}
+    </div>
+  );
 };
 
 export default FormField;

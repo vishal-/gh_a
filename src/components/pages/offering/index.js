@@ -1,28 +1,35 @@
 import React from "react";
 import FormField from "../../atomic/form_fields";
 import { OFFERING_FIELDS as fields } from "../../../config/fields.config";
+import OfferingService from "../../../services/offering.service";
 
 class Offering extends React.Component {
   constructor() {
     super();
-
-    this.state = fields.reduce((o, f) => ({ ...o, [f.label]: "" }), {});
+    this.os = new OfferingService();
+    this.initialValues = fields.reduce((o, f) => ({ ...o, [f.label]: "" }), {});
+    this.state = { ...this.initialValues };
   }
 
   changeHandler = (f, v) => {
-    console.log(f, v);
     this.setState({ [f]: v });
   };
 
-  render() {
-    console.log(this.state);
+  reset = () => {
+    this.setState({ ...this.initialValues });
+  };
 
+  submitHandler = async () => {
+    await this.os.save({ ...this.state });
+  };
+
+  render() {
     return (
       <div>
         <h2>Offering</h2>
         <article>
-          <div className="bottom-stick">
-            <div className="w-80">
+          <div className="bottom-stick row">
+            <div className="col-10">
               <FormField
                 fields={fields}
                 changeHandler={this.changeHandler}
@@ -30,12 +37,16 @@ class Offering extends React.Component {
               />
             </div>
 
-            <div className="form-field-wrapper w-20">
-              <div className="">
-                <button>Reset</button>
+            <div className="col-2">
+              <div className="row-cols-1 mt-4">
+                <button className="primary" onClick={this.reset}>
+                  Reset
+                </button>
               </div>
-              <div className="">
-                <button>Save</button>
+              <div className="row-cols-1 mt-4">
+                <button className="primary" onClick={this.submitHandler}>
+                  Save
+                </button>
               </div>
             </div>
           </div>
