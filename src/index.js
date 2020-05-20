@@ -5,12 +5,7 @@ import Container from "./components/container";
 import "./static/styles/bootstrap-grid.min.css";
 import "./static/styles/styles.scss";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Container />
-  </React.StrictMode>,
-  document.getElementById("root")
-);
+ReactDOM.render(<Container />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

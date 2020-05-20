@@ -1,13 +1,22 @@
 import React from "react";
 import Offering from "./pages/offering";
 import "../static/styles/container.scss";
+// import CookieService from "../services/cookie.service";
 
-const Container = () => {
-  return (
-    <div className="container-fluid">
-      <Offering />
-    </div>
-  );
-};
+class Container extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="container-fluid">
+        <Offering />
+      </div>
+    );
+  }
+}
 
 export default Container;
