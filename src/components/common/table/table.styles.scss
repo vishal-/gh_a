@@ -1,23 +1,54 @@
-$tbl-hd-cell-bg: #138d75;
-$tbl-hd-cell-color: #a2d9ce;
-$tbl-bd-cell-bg: #0b5345;
-$tbl-bd-cell-color: #d0ece7;
+$tbl-hd-cell-bg: #cd6155;
+$tbl-hd-cell-color: #641e16;
+$tbl-hd-hover-bg: #c0392b;
+$tbl-hd-hover-color: #3d120d;
+$tbl-bd-cell-bg: #3d120d;
+$tbl-bd-cell-bg2: #581a14;
+$tbl-bd-cell-color: #e6c9c7;
+$tbl-bd-cell-color2: #f2d7d5;
+$tbl-border-hd: #78281f;
+$tbl-border-bd: #b03a2e;
 
 .gh-tbl {
   display: inline;
+  border: 1px solid $tbl-border-bd;
+  border-collapse: collapse;
 
   .gh-tbl-hd-tr {
     .gh-tbl-hd-td {
       padding: 0.25rem;
       background-color: $tbl-hd-cell-bg;
       color: $tbl-hd-cell-color;
+      border: 1px solid $tbl-border-hd;
+
+      &:hover {
+        background-color: $tbl-hd-hover-bg;
+        color: $tbl-hd-hover-color;
+        cursor: pointer;
+      }
     }
   }
+
   .gh-tbl-bd-tr {
-    .gh-tbl-bd-td {
-      padding: 0.5rem;
+    text-align: left;
+
+    &:nth-child(odd) {
       background-color: $tbl-bd-cell-bg;
       color: $tbl-bd-cell-color;
+    }
+
+    &:nth-child(even) {
+      background-color: $tbl-bd-cell-bg2;
+      color: $tbl-bd-cell-color2;
+    }
+
+    &:hover {
+      border: 2px solid $tbl-bd-cell-color2;
+    }
+
+    .gh-tbl-bd-td {
+      border: 1px solid $tbl-border-bd;
+      padding: 0.5rem;
     }
   }
 }
