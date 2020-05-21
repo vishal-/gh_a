@@ -5,8 +5,6 @@ import "./table.styles.scss";
 const Table = ({ data, options }) => {
   const tblData = TH.getTableData(data, options);
 
-  console.log(tblData, options);
-
   return Object.prototype.hasOwnProperty.call(tblData, "columns") &&
     tblData.columns.length > 0 ? (
     <table className="gh-tbl">
@@ -17,6 +15,8 @@ const Table = ({ data, options }) => {
               {c.title}
             </th>
           ))}
+          <th className="gh-tbl-hd-td">Edit</th>
+          <th className="gh-tbl-hd-td">Delete</th>
         </tr>
       </thead>
       <tbody>
@@ -27,6 +27,8 @@ const Table = ({ data, options }) => {
                 {d[c.key]}
               </td>
             ))}
+            <td className="gh-tbl-bd-td">Edit</td>
+            <td className="gh-tbl-bd-td">Delete</td>
           </tr>
         ))}
       </tbody>
