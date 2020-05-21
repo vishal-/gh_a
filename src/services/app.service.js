@@ -23,6 +23,13 @@ class AppService {
   getSelectedPage = () => {
     return this.getAppCookie().selected_page;
   };
+
+  updateSelectedPage = selected => {
+    const kukee = { ...CookieService.getCookie(APP_COOKIE) };
+
+    kukee.selected_page = selected;
+    CookieService.setCookie(APP_COOKIE, kukee);
+  };
 }
 
 export default AppService;

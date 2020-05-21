@@ -1,8 +1,66 @@
+$nav-bg: #17202a;
+$nav-bg-hover: #2c3e50;
+$nav-bg-selected: #808b96;
+$nav-color: #abb2b9;
+$nav-color-hover: #eaecee;
+$nav-color-selected: #111;
+$nav-border: #566573;
+
 body {
+  margin: 0;
+  padding: 0;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #333;
   color: #ddd;
+
+  button {
+    cursor: pointer;
+
+    &.primary {
+      font-size: 0.75rem;
+      border-radius: 0.5rem;
+      width: 100%;
+      padding: 0.25rem 0;
+      border: 1px solid #2e86c1;
+      background-color: #1b4f72;
+      color: #ebf5fb;
+
+      &:hover {
+        background-color: #2874a6;
+      }
+    }
+
+    &.nav {
+      font-size: 0.75rem;
+      padding: 0.75rem 2rem;
+      background-color: $nav-bg;
+      color: $nav-color;
+      border: none;
+
+      &:hover {
+        background-color: $nav-bg-hover;
+        color: $nav-color-hover;
+      }
+
+      &.selected {
+        color: $nav-color-selected;
+        background-color: $nav-bg-selected;
+      }
+    }
+  }
+
+  .nav-list {
+    padding: 0;
+    margin: 0;
+    // text-align: right;
+
+    .nav-item {
+      list-style-type: none;
+      display: inline-block;
+      margin: 0 0.25rem;
+    }
+  }
 
   .bottom-stick {
     position: fixed;

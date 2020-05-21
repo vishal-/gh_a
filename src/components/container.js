@@ -3,6 +3,7 @@ import Offering from "./pages/offering";
 import "../static/styles/container.scss";
 import AppService from "../services/app.service";
 import { PAGES } from "../config/pages.config";
+import Header from "./common/header";
 
 class Container extends React.Component {
   constructor() {
@@ -13,10 +14,11 @@ class Container extends React.Component {
 
   componentDidMount = () => {
     const selected = this.as.getSelectedPage();
+    this.setState({ selected });
+  };
 
-    console.log(selected);
-    console.log(selected === PAGES.OFFERING);
-
+  updateSelection = selected => {
+    this.as.updateSelectedPage(selected);
     this.setState({ selected });
   };
 
@@ -25,6 +27,8 @@ class Container extends React.Component {
 
     return (
       <div className="container-fluid">
+        <Header selected={selected} updateSelection={this.updateSelection} />
+
         {selected === PAGES.OFFERING && <Offering />}
       </div>
     );

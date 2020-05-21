@@ -2,7 +2,6 @@ import React from "react";
 import { OFFERING_FIELDS as fields } from "../../../config/fields.config";
 import OfferingService from "../../../services/offering.service";
 import AddForm from "../../common/add_form";
-import Header from "../../common/header";
 
 class Offering extends React.Component {
   constructor() {
@@ -26,18 +25,15 @@ class Offering extends React.Component {
 
   render() {
     return (
-      <>
-        <Header />
-        <article>
-          <AddForm
-            fields={fields}
-            values={this.state}
-            changeHandler={this.changeHandler}
-            resetHandler={this.resetHandler}
-            submitHandler={this.submitHandler}
-          />
-        </article>
-      </>
+      <article>
+        <AddForm
+          fields={fields}
+          values={this.state}
+          changeHandler={this.changeHandler}
+          resetHandler={this.resetHandler}
+          submitHandler={this.submitHandler}
+        />
+      </article>
     );
   }
 }
