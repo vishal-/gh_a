@@ -12,6 +12,10 @@ class OfferingService {
       description
     });
   };
+
+  fetch = async () => {
+    return await this.ds.dispatch(METHOD.GET, API.OFFERING, null);
+  };
 }
 
 export default OfferingService;

@@ -2,14 +2,19 @@ import React from "react";
 import { OFFERING_FIELDS as fields } from "../../../config/fields.config";
 import OfferingService from "../../../services/offering.service";
 import AddForm from "../../common/add_form";
+import Table from "../../common/table";
 
 class Offering extends React.Component {
   constructor() {
     super();
     this.os = new OfferingService();
     this.initialValues = fields.reduce((o, f) => ({ ...o, [f.label]: "" }), {});
-    this.state = { ...this.initialValues };
+    this.state = { ...this.initialValues, offerings: [] };
   }
+
+  componentDidMount = async () => {
+    this.setState({ offerings: await this.os.fetch() });
+  };
 
   changeHandler = (f, v) => {
     this.setState({ [f]: v });
@@ -26,6 +31,10 @@ class Offering extends React.Component {
   render() {
     return (
       <article>
+        <div className="row">
+          <div className="col-12">{JSON.stringify(this.state.offerings)}</div>
+          <Table data={this.state.offerings} />
+        </div>
         <AddForm
           fields={fields}
           values={this.state}

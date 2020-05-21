@@ -13,8 +13,7 @@ class Container extends React.Component {
   }
 
   componentDidMount = () => {
-    const selected = this.as.getSelectedPage();
-    this.setState({ selected });
+    this.setState({ selected: this.as.getSelectedPage() });
   };
 
   updateSelection = selected => {
