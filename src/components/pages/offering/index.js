@@ -32,8 +32,9 @@ class Offering extends React.Component {
     return (
       <article>
         <div className="row">
-          <div className="col-12">{JSON.stringify(this.state.offerings)}</div>
-          <Table data={this.state.offerings} />
+          <div className="col-12">
+            <Table data={this.state.offerings} />
+          </div>
         </div>
         <AddForm
           fields={fields}

@@ -1,12 +1,11 @@
 const defaultOptions = {
-  cols: [
-    // Prototype
-    {
-      title: "aslfkjslfjlsjflsdjflkjsdflkjsdfkljsadflkjsdlfkjsdl",
-      newTitle: "ASDLFKJSFLJSLFJLSJFLSJFLSJFIUWEIPRWEROUXZVNXZVN",
-      display: false
-    }
-  ]
+  // cols: [
+  //   {
+  //     title: "aslfkjslfjlsjflsdjflkjsdflkjsdfkljsadflkjsdlfkjsdl",
+  //     newTitle: "ASDLFKJSFLJSLFJLSJFLSJFLSJFIUWEIPRWEROUXZVNXZVN",
+  //     display: false
+  //   }
+  // ]
 };
 
 const getAllColumns = data =>
