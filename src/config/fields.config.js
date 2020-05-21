@@ -25,3 +25,26 @@ export const OFFERING_FIELDS = [
     colsize: 12
   }
 ];
+
+export const OFFERING_COLS = [
+  {
+    title: "id"
+  },
+  {
+    title: "name",
+    newTitle: "Name"
+  },
+  {
+    title: "title",
+    newTitle: "Title"
+  },
+  {
+    title: "subtext",
+    newTitle: "Sub Text"
+  },
+  {
+    title: "description",
+    newTitle: "Description",
+    display: true
+  }
+];

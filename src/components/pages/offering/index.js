@@ -1,8 +1,11 @@
 import React from "react";
-import { OFFERING_FIELDS as fields } from "../../../config/fields.config";
+import {
+  OFFERING_FIELDS as fields,
+  OFFERING_COLS as cols
+} from "../../../config/fields.config";
 import OfferingService from "../../../services/offering.service";
 import AddForm from "../../common/add_form";
-import Table from "../../common/table";
+import DisplayTable from "../../common/display_table";
 
 class Offering extends React.Component {
   constructor() {
@@ -31,11 +34,8 @@ class Offering extends React.Component {
   render() {
     return (
       <article>
-        <div className="row">
-          <div className="col-12">
-            <Table data={this.state.offerings} />
-          </div>
-        </div>
+        <DisplayTable data={this.state.offerings} options={{ cols }} />
+
         <AddForm
           fields={fields}
           values={this.state}

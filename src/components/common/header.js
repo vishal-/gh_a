@@ -4,8 +4,7 @@ import NavBar from "../atomic/nav_bar";
 const Header = props => (
   <header className="py-2">
     <div className="row">
-      <div className="col-2"></div>
-      <div className="col-10">
+      <div className="col-12 text-center">
         <NavBar {...props} />
       </div>
     </div>

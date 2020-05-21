@@ -1,0 +1,23 @@
+$tbl-hd-cell-bg: #138d75;
+$tbl-hd-cell-color: #a2d9ce;
+$tbl-bd-cell-bg: #0b5345;
+$tbl-bd-cell-color: #d0ece7;
+
+.gh-tbl {
+  display: inline;
+
+  .gh-tbl-hd-tr {
+    .gh-tbl-hd-td {
+      padding: 0.25rem;
+      background-color: $tbl-hd-cell-bg;
+      color: $tbl-hd-cell-color;
+    }
+  }
+  .gh-tbl-bd-tr {
+    .gh-tbl-bd-td {
+      padding: 0.5rem;
+      background-color: $tbl-bd-cell-bg;
+      color: $tbl-bd-cell-color;
+    }
+  }
+}
