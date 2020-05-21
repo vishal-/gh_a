@@ -1,0 +1,6 @@
+export const PAGES = {
+  OFFERING: "OFFERING",
+  SERVICE: "SERVICE"
+};
+
+export const SELECTED_PAGE = PAGES.OFFERING;

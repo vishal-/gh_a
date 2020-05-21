@@ -1,19 +1,31 @@
 import React from "react";
 import Offering from "./pages/offering";
 import "../static/styles/container.scss";
-// import CookieService from "../services/cookie.service";
+import AppService from "../services/app.service";
+import { PAGES } from "../config/pages.config";
 
 class Container extends React.Component {
   constructor() {
     super();
-
-    this.state = {};
+    this.as = new AppService();
+    this.state = { selected: null };
   }
 
+  componentDidMount = () => {
+    const selected = this.as.getSelectedPage();
+
+    console.log(selected);
+    console.log(selected === PAGES.OFFERING);
+
+    this.setState({ selected });
+  };
+
   render() {
+    const { selected } = this.state;
+
     return (
       <div className="container-fluid">
-        <Offering />
+        {selected === PAGES.OFFERING && <Offering />}
       </div>
     );
   }
